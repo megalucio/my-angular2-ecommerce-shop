@@ -1,25 +1,12 @@
 import {Routes} from '@angular/router';
-import {About} from './about/about';
-import {Home} from './home/home';
-import {Products} from './products/products';
-import {RepoBrowser} from './github/repo-browser/repo-browser';
-import {RepoList} from './github/repo-list/repo-list';
-import {RepoDetail} from './github/repo-detail/repo-detail';
+import {About} from './components/about/about';
+import {Home} from './components/home/home';
+import {Products} from './components/products/products';
 
 export const rootRouterConfig: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'products', component: Products},
   {path: 'home', component: Home},
   {path: 'about', component: About},
-  {path: 'github', component: RepoBrowser,
-    children: [
-      {path: '', component: RepoList},
-      {path: ':org', component: RepoList,
-        children: [
-          {path: '', component: RepoDetail},
-          {path: ':repo', component: RepoDetail}
-        ]
-      }]
-  }
 ];
 

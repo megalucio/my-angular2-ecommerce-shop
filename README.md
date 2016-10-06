@@ -1,6 +1,6 @@
-## angular2-seed
+## my-angular2-ecommerce-shop
 
-A simple starter project demonstrating the basic concepts of Angular 2.
+A simple ecommerce application to simulate an online fruit shop
 
 
 ### Usage

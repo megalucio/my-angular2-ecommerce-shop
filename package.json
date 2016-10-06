@@ -1,5 +1,5 @@
 {
-  "name": "angular2-seed",
+  "name": "my-angular2-ecommerce-shop",
   "version": "1.0.0",
   "description": "A simple starter Angular2 project",
   "scripts": {
@@ -9,8 +9,7 @@
     "start": "npm run server"
   },
   "contributors": [
-    "Rob Wormald <robwormald@gmail.com>",
-    "PatrickJS <github@gdi2290.com>"
+    "Ignacio Iñigo<iinigohe@gmail.com>"
   ],
   "license": "MIT",
   "devDependencies": {
@@ -47,16 +46,14 @@
   },
   "keywords": [
     "Angular2",
-    "angular2-seed",
-    "official angular 2 seed",
-    "official angular2 seed"
+    "angular2-fruit-shop",
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/angular/angular2-seed.git"
+    "url": "git+https://github.com/megalucio/my-angular2-ecommerce-shop.git"
   },
   "bugs": {
-    "url": "https://github.com/angular/angular2-seed/issues"
+    "url": "https://github.com/megalucio/my-angular2-ecommerce-shop/issues"
   },
-  "homepage": "https://github.com/angular/angular2-seed#readme"
+  "homepage": "https://github.com/megalucio/my-angular2-ecommerce-shop#readme"
 }
