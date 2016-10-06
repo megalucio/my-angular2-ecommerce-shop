@@ -8,7 +8,7 @@ import { Product } from './../models/product';
 @Injectable()
 export class ProductService {
 
-  private token = "1d9bd9d5-d940-4edc-b87d-8cf1bed83b5d";
+  private token = "abafda6f-6881-4837-a0dd-f1c730b69a4e";
 
   private productsUrl = 'http://prime.mqa-labs.com:8080/mqapos-2.0/products?access_token=' + this.token;  // URL to web API
 

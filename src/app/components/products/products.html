@@ -3,7 +3,7 @@
 
 <ul>
   <li *ngFor="let product of products">
-    {{product.name}}
+    {{product.name}}:{{product.prices[0].price}}<button>+</button>
   </li>
 </ul>
 <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
