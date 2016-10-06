@@ -10,7 +10,7 @@ export class ProductService {
 
   private token = "abafda6f-6881-4837-a0dd-f1c730b69a4e";
 
-  private productsUrl = 'http://prime.mqa-labs.com:8080/mqapos-2.0/products?access_token=' + this.token;  // URL to web API
+  private productsUrl = 'http://mqa:8080/mqapos-2.0/products?access_token=' + this.token;  // URL to web API
 
   constructor (private http: Http) {}
 
