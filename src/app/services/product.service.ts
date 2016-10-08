@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { Http, Headers} from '@angular/http';
 
 import { Observable }     from 'rxjs/Observable';
 
@@ -10,7 +10,7 @@ export class ProductService {
 
   private token = "abafda6f-6881-4837-a0dd-f1c730b69a4e";
 
-  private productsUrl = 'http://mqa:8080/mqapos-2.0/products?access_token=' + this.token;  // URL to web API
+  private productsUrl = 'http://mqa:8080/mqapos-2.0/products?access_token=' + localStorage["token"];  // URL to web API
 
   constructor (private http: Http) {}
 
