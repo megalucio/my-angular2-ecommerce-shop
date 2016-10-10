@@ -16,8 +16,8 @@ export class ProductService {
       let productsUrl = this.constants.serviceUrl + '/products?access_token=' + localStorage["token"];
 
       return this.http.get(productsUrl)
-                         .map(res => res.json())
-                     .catch(this.handleError);
+                      .map(res => res.json())
+                      .catch(this.handleError);
    }
 
   private handleError (error: any) {
