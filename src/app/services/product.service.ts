@@ -1,3 +1,4 @@
+import { Constants } from './../constants';
 import { Injectable } from '@angular/core';
 import { Http, Headers} from '@angular/http';
 
@@ -8,21 +9,18 @@ import { Product } from './../models/product';
 @Injectable()
 export class ProductService {
 
-  private token = "abafda6f-6881-4837-a0dd-f1c730b69a4e";
-
-  private productsUrl = 'http://mqa:8080/mqapos-2.0/products?access_token=' + localStorage["token"];  // URL to web API
-
-  constructor (private http: Http) {}
+  constructor (private http: Http, private constants: Constants) {}
 
   getProducts(): Observable<any> {
-      return this.http.get(this.productsUrl)
-                   .map(res => res.json())
+
+      let productsUrl = this.constants.serviceUrl + '/products?access_token=' + localStorage["token"];
+
+      return this.http.get(productsUrl)
+                         .map(res => res.json())
                      .catch(this.handleError);
    }
 
   private handleError (error: any) {
-    // In a real world app, we might use a remote logging infrastructure
-    // We'd also dig deeper into the error to get a better message
     let errMsg = (error.message) ? error.message :
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
     console.error(errMsg); // log to console instead

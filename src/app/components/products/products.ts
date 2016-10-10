@@ -17,6 +17,9 @@ export class Products {
   constructor(private productService: ProductService) { }
 
 getProducts(): void {
+
+  Object.keys("aaa");
+
     this.productService.getProducts()
                      .subscribe(
                        data => this.products = data.response.content,

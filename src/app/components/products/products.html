@@ -1,11 +1,12 @@
 <h3>Products Component</h3>
 <p>Avaliable Products</p>
 
-<ul>
-  <li *ngFor="let product of products">
-    {{product.name}}:{{product.prices[0].price}}<button>+</button>
-  </li>
-</ul>
+<div *ngFor="let product of products">
+  <div>{{product.name}}</div>   
+  <div>{{(product.prices|iterable)[0].value.price}}</div>
+  <div><button>+</button></div>
+</div>
+
 <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
 
 <br>

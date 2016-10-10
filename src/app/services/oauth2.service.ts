@@ -1,3 +1,4 @@
+import { Constants } from './../constants';
 import { Injectable } from '@angular/core';
 import { Http, Headers} from '@angular/http';
 
@@ -8,25 +9,18 @@ import { Product } from './../models/product';
 @Injectable()
 export class Oauth2Service {
 
-  private username: string = 'andres';
-  private password: string = '1234';
-
-  private client:string = 'mqaposclient';
-  private secret:string = 'teamHybris2016';
-
-  private tokenUrl: string = 'http://mqa:8080/mqapos-2.0/oauth/token';
-
-  private bodyOauth: string = "grant_type=password" + "&username=" + this.username + "&password=" + this.password;
-
-  constructor (private http: Http) {}
+  constructor (private http: Http, private constants: Constants) {}
 
   getToken(): Observable<any> {
 
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    headers.append('Authorization', 'Basic ' + btoa(this.client+':'+this.secret));
+    let tokenUrl: string = this.constants.serviceUrl + '/oauth/token';
+    let bodyOauth: string = "grant_type=password" + "&username=" + this.constants.username + "&password=" + this.constants.password;
 
-    return this.http.post(this.tokenUrl, this.bodyOauth, {headers: headers})
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    headers.append('Authorization', 'Basic ' + btoa(this.constants.client+':'+this.constants.secret));
+
+    return this.http.post(tokenUrl, bodyOauth, {headers: headers})
                    .map(res => res.json())
                      .catch(this.handleError);
    }
